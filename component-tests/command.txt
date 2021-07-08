@@ -1,1 +1,6 @@
+
+===========RECORDING MODE===============
 java -jar wiremock.jar --port 9000 --record-mappings --proxy-all="http://jsonplaceholder.typicode.com" --verbose
+
+===========MVN TEST ON SPECIFIC PROFILE=========
+mvn -Dspring.profiles.active=records test
