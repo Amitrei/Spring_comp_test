@@ -1,6 +1,8 @@
 package com.amitrei.WireMockTest.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonRawValue;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +20,13 @@ public class BookModel {
     private String name;
     @NonNull
     private int sales;
-    @NonNull
-    private List<AuthorModel> authorList;
+
+    @JsonRawValue
+    private Object authorList = "[\n" +
+            "        {\n" +
+            "            \"authorName\":\"finalmoshe\",\n" +
+            "            \"age\":1132352\n" +
+            "        }\n" +
+            "    ]\n";
 }
 
